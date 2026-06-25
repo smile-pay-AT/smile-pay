@@ -1,0 +1,66 @@
+/* ---- Design tokens -----------------------------------------------------
+   Ink:      #0E1A2B  deep navy, the "ledger" background
+   Bone:     #F6F1E7  warm paper, receipt surfaces
+   Coral:    #FF5A4E  the one live accent — pay actions, scan pulse
+   Verified: #1FAE6B  confirmation state only
+   Slate:    #6B7280  secondary text
+   Hairline: rgba(255,255,255,0.08) on ink / rgba(14,26,43,0.1) on bone
+--------------------------------------------------------------------------- */
+
+:root {
+  --ink: #0e1a2b;
+  --ink-soft: #16263d;
+  --bone: #f6f1e7;
+  --bone-dim: #ece4d3;
+  --coral: #ff5a4e;
+  --coral-dim: #ff8b82;
+  --verified: #1fae6b;
+  --slate: #8a93a3;
+  --slate-dark: #5b6472;
+  --hairline: rgba(255, 255, 255, 0.08);
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--coral-dim);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
